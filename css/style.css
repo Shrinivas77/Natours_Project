@@ -63,39 +63,38 @@ body {
     letter-spacing: 35px;
     font-size: 60px;
     font-weight: 400;
+
     /* For Animation to work we have to specify 2 properties animation-name and animation-duration */
     animation-name: moveInLeft;
     animation-duration: 3s;
     /* it will wait 2sec before starting animation
     animation-delay: 2s; */
-    /* Defines the number of times an animation cycle is played. The default value is one,
-    meaning the animation will play from beginning to end once.
-     animation-iteration-count: 2;
-} 
-*/
+    animation-iteration-count: 2;
+}
 
-    .heading-primary-sub {
-        display: block;
-        letter-spacing: 17px;
-        font-size: 20px;
-        font-weight: 700;
+
+.heading-primary-sub {
+    display: block;
+    letter-spacing: 17px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Animations */
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
     }
 
-    /* Animations */
-
-    @keyframes moveInLeft {
-        0% {
-            opacity: 0;
-            transform: translateX(-100px);
-        }
-
-        80% {
-            transform: translateX(20px);
-        }
-
-        /* Change back to normal position */
-        100% {
-            opacity: 1;
-            transform: translate(0);
-        }
+    80% {
+        transform: translateX(20px);
     }
+
+    /* Change back to normal position */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
