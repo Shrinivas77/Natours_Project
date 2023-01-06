@@ -69,6 +69,8 @@ body {
     animation-duration: 3s;
     /* it will wait 2sec before starting animation
     animation-delay: 2s; */
+    /* Defines the number of times an animation cycle is played. The default value is one,
+        meaning the animation will play from beginning to end once.*/
     animation-iteration-count: 2;
 }
 
