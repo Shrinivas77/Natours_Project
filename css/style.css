@@ -51,6 +51,7 @@ body {
     top: 40%;
     transform: translate(-50%, -50%);
     /* translate values are in relation with element itself */
+    text-align: center;
 }
 
 .heading-primary {
@@ -121,4 +122,79 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+/* Button Styling */
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 100px;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn-white {
+    background-color: white;
+    color: #777;
+
+}
+
+.btn:hover {
+    /* Move Up */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+
+}
+
+.btn::after {
+    /* we always have to declare content property it can be empty otherwise the effect will not take place */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* So remember the z index defines the position of the elements if they are one on top of another. And so this o
+    ne has minus one and so it's definitely behind the button. */
+    transition: all 0.4s;
+}
+
+.btn-white::after {
+    background-color: white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /* Fading out the element */
+    opacity: 0;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn-animated {
+    animation-name: moveUp;
+    animation-duration: 1s;
 }
