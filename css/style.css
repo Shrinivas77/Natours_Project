@@ -32,4 +32,42 @@ body {
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    position: relative;
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.text-box {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* translate values are in relation with element itself */
+}
+
+.heading-primary {
+    color: white;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    letter-spacing: 35px;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.heading-primary-sub {
+    display: block;
+    letter-spacing: 17px;
+    font-size: 20px;
+    font-weight: 700;
 }
