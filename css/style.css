@@ -56,6 +56,8 @@ body {
 .heading-primary {
     color: white;
     text-transform: uppercase;
+    /* Hack to fix shakiness in animations */
+    /* backface-visibility: hidden; */
 }
 
 .heading-primary-main {
@@ -66,12 +68,13 @@ body {
 
     /* For Animation to work we have to specify 2 properties animation-name and animation-duration */
     animation-name: moveInLeft;
-    animation-duration: 3s;
-    /* it will wait 2sec before starting animation
-    animation-delay: 2s; */
+    animation-duration: 1s;
+    /* animation-delay: 2s; */
+    /* it will wait 2sec before starting animation */
+    /* animation-iteration-count: 2; */
     /* Defines the number of times an animation cycle is played. The default value is one,
         meaning the animation will play from beginning to end once.*/
-    animation-iteration-count: 2;
+    animation-timing-function: ease-out;
 }
 
 
@@ -80,6 +83,9 @@ body {
     letter-spacing: 17px;
     font-size: 20px;
     font-weight: 700;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 
 /* Animations */
@@ -94,7 +100,23 @@ body {
         transform: translateX(20px);
     }
 
-    /* Change back to normal position */
+    100% {
+        opacity: 1;
+        /* Change back to normal position */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
     100% {
         opacity: 1;
         transform: translate(0);
